@@ -25,7 +25,13 @@ jobs:
         with:
           node-version: 20
       - run: npm ci
-      - run: npm run build
+      
+      # Build with environment variable
+      - name: Build
+        env:
+          VITE_RAWG_API_KEY: ${{ secrets.VITE_RAWG_API_KEY }}
+        run: npm run build
+        
       - uses: actions/configure-pages@v4
       - uses: actions/upload-pages-artifact@v3
         with:
