@@ -2,7 +2,11 @@ name: Deploy to GitHub Pages
 
 on:
   push:
-    branches: [main] # Runs every time you push to the 'main' branch
+    branches: [main]
+
+permissions:
+  contents: write  # Add this line to grant write permissions
+  pages: write     # Optional: also needed for GitHub Pages
 
 jobs:
   build-and-deploy:
@@ -23,11 +27,10 @@ jobs:
       - name: Build
         run: npm run build
         env:
-          # This pulls the secret from your GitHub Repository settings
           VITE_RAWG_API_KEY: ${{ secrets.VITE_RAWG_API_KEY }}
 
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@v4
         with:
-          folder: dist # Vite builds into the 'dist' folder
-          branch: gh-pages # Deploys the code to a separate branch for hosting
+          folder: dist
+          branch: gh-pages
