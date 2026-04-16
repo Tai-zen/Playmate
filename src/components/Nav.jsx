@@ -28,6 +28,11 @@ const Nav = () => {
             Contact
           </Link>
         </li>
+        <li>
+          <Link to="/about" className="text-[13px] font-semibold text-white/50 hover:text-white transition-all uppercase tracking-widest no-underline">
+            About Us
+          </Link>
+        </li>
         {/* You can add more links here as needed */}
       </ul>
 
@@ -64,6 +69,10 @@ const Nav = () => {
             onClick={() => setMenuOpen(false)}
           >
             Contact
+          </Link>
+          <Link to="/about"
+          className="text-sm font-semibold text-white/60 hover:text-accent transition-colors no-underline uppercase tracking-widest"
+            onClick={() => setMenuOpen(false)}>About Us
           </Link>
           <button className="w-full py-4 bg-accent text-white font-bold rounded-xl">
             GET STARTED

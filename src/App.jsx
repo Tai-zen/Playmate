@@ -6,6 +6,10 @@ import Contact from './components/Contact';
 import ScrollToTop from './components/ScrollToTop';
 import Home from './pages/Home';
 import GameDetail from './pages/GameDetail';
+import About from './pages/About';
+import PrivacyPolicy from './pages/PrivacyPolicy';
+import TermsOfUse from './pages/TermsOfUse';
+import CookiePolicy from './pages/CookiePolicy';
 import { API_URL, API_KEY } from './lib/constants';
 
 export default function App() {
@@ -50,8 +54,12 @@ export default function App() {
               query={query} 
             />
           } />
+          <Route path="/about" element={<About />} />
           <Route path="/game/:id" element={<GameDetail />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/privacy" element={<PrivacyPolicy />} />
+          <Route path="/terms" element={<TermsOfUse />} />
+          <Route path="/cookies" element={<CookiePolicy />} />
         </Routes>
         <Footer />
       </div>
